@@ -10,7 +10,7 @@
 	<body><center>
 		<div class="table" ng-controller="gameController as game">
 		<table>
-			<thead><marquee behavior="alternate"  scrollamount="50"><p class="normalFont">tic tac toe</p></marquee></thead>
+			<thead><marquee behavior="alternate"><p class="normalFont">tic tac toe</p></marquee></thead>
 			<tr>
 				<td ng-click="game.move(0)" class="tabletd"><div class="tds"><img src="{{game.getPic(0)}}" class="pic"/></div></td>
 				<td ng-click="game.move(1)"  class="tabletd"><div  class="tds"><img src="{{game.getPic(1)}}" class="pic"/></div></td>
