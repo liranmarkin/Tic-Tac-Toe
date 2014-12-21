@@ -11,19 +11,19 @@
 		<div class="table" ng-controller="gameController as game">
 		<table>
 			<tr>
-				<td><div class="tds" ng-click="game.move(0)">{{game.board[0]}}</div></td>
-				<td><div class="tds" ng-click="game.move(1)">{{game.board[1]}}</div></td>
-				<td><div class="tds" ng-click="game.move(2)">{{game.board[2]}}</div></td>
+				<td class="tds" ng-click="game.move(0)"><div>{{game.display(0)}}</div></td>
+				<td class="tds" ng-click="game.move(1)"><div>{{game.display(1)}}</div></td>
+				<td class="tds" ng-click="game.move(2)"><div>{{game.display(2)}}</div></td>
 			</tr>
 			<tr>
-				<td><div class="tds" ng-click="game.move(3)">{{game.board[3]}}</div></td>
-				<td><div class="tds" ng-click="game.move(4)">{{game.board[4]}}</div></td>
-				<td><div class="tds" ng-click="game.move(5)">{{game.board[5]}}</div></td>
+				<td class="tds" ng-click="game.move(3)"><div>{{game.display(3)}}</div></td>
+				<td class="tds" ng-click="game.move(4)"><div>{{game.display(4)}}</div></td>
+				<td class="tds" ng-click="game.move(5)"><div>{{game.display(5)}}</div></td>
 			</tr>
 			<tr>
-				<td><div class="tds" ng-click="game.move(6)">{{game.board[6]}}</div></td>
-				<td><div class="tds" ng-click="game.move(7)">{{game.board[7]}}</div></td>
-				<td><div class="tds" ng-click="game.move(8)">{{game.board[8]}}</div></td>
+				<td class="tds" ng-click="game.move(6)"><div>{{game.display(6)}}</div></td>
+				<td class="tds" ng-click="game.move(7)"><div>{{game.display(7)}}</div></td>
+				<td class="tds" ng-click="game.move(8)"><div>{{game.display(8)}}</div></td>
 			</tr>
 		</table>
 		</div>

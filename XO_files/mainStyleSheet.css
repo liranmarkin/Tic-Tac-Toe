@@ -1,14 +1,22 @@
+body{
+	text-align: center;
+}
 .table{
 	background-color: #FF00FF;
 	border-width: 2px;
 	border-color: rgb(100,110,0);
 	border-style: solid;
-	margin: 100px;
+	margin: auto;
+	width: 500px;
+	padding: 10px;
+	
 }
 .tds{
 	background-color: #00FF00;	
-	margin: 10px;
 	width: 50px;
+	margin:auto;
 	height: 50px;
 	text-align: center;
+	float: left;
+	display:table-cell;
 }
