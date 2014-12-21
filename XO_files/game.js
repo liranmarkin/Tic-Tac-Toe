@@ -3,20 +3,21 @@ var app = angular.module("game",[]);
 app.controller('gameController',function() {
     this.turn = 1;
     this.board = [0,0,0,0,0,0,0,0,0];
-	//display
-	this.display = function(cell){
+    
+    //get display of cells
+	this.getPic = function(cell){
 		switch(this.board[cell]){
 			case 0:
-				return 'C';
+				return 'pics/blank.png';
 				break;
 			case 1:
-				return 'X';
+				return 'pics/X.png';
 				break;
 			case 2:
-				return 'O';
+				return 'pics/O.png';
 				break;
 			default:
-				return 'F';
+				return 'pics/fail.png';
 		}
 	};
 	

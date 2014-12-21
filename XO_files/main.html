@@ -11,19 +11,19 @@
 		<div class="table" ng-controller="gameController as game">
 		<table>
 			<tr>
-				<td class="tds" ng-click="game.move(0)"><div>{{game.display(0)}}</div></td>
-				<td class="tds" ng-click="game.move(1)"><div>{{game.display(1)}}</div></td>
-				<td class="tds" ng-click="game.move(2)"><div>{{game.display(2)}}</div></td>
+				<td class="tds" ng-click="game.move(0)"><div><img src="{{game.getPic(0)}}" class="pic"/></div></td>
+				<td class="tds" ng-click="game.move(1)"><div><img src="{{game.getPic(1)}}" class="pic"/></div></td>
+				<td class="tds" ng-click="game.move(2)"><div><img src="{{game.getPic(2)}}" class="pic"/></div></td>
 			</tr>
 			<tr>
-				<td class="tds" ng-click="game.move(3)"><div>{{game.display(3)}}</div></td>
-				<td class="tds" ng-click="game.move(4)"><div>{{game.display(4)}}</div></td>
-				<td class="tds" ng-click="game.move(5)"><div>{{game.display(5)}}</div></td>
+				<td class="tds" ng-click="game.move(3)"><div><img src="{{game.getPic(3)}}" class="pic"/></div></td>
+				<td class="tds" ng-click="game.move(4)"><div><img src="{{game.getPic(4)}}" class="pic"/></div></td>
+				<td class="tds" ng-click="game.move(5)"><div><img src="{{game.getPic(5)}}" class="pic"/></div></td>
 			</tr>
 			<tr>
-				<td class="tds" ng-click="game.move(6)"><div>{{game.display(6)}}</div></td>
-				<td class="tds" ng-click="game.move(7)"><div>{{game.display(7)}}</div></td>
-				<td class="tds" ng-click="game.move(8)"><div>{{game.display(8)}}</div></td>
+				<td class="tds" ng-click="game.move(6)"><div><img src="{{game.getPic(6)}}" class="pic"/></div></td>
+				<td class="tds" ng-click="game.move(7)"><div><img src="{{game.getPic(7)}}" class="pic"/></div></td>
+				<td class="tds" ng-click="game.move(8)"><div><img src="{{game.getPic(8)}}" class="pic"/></div></td>
 			</tr>
 			<tr><td>
 				<div class="refresh" ng-click="game.refresh()">
