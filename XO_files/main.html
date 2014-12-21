@@ -11,7 +11,7 @@
 		<div class="table" ng-controller="gameController as game">
 		<table>
 			<tr>
-				<td><div class="tds" ng-click="game.move(0)">{{game.board[0]}}</div></td>
+				<td><div ng-class="game.board[0]" ng-click="game.move(0)">{{game.board[0]}}</div></td>
 				<td><div class="tds" ng-click="game.move(1)">{{game.board[1]}}</div></td>
 				<td><div class="tds" ng-click="game.move(2)">{{game.board[2]}}</div></td>
 			</tr>

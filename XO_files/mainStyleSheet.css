@@ -5,6 +5,13 @@
 	border-style: solid;
 	margin: 100px;
 }
+.1{
+	background-color: #0000FF;
+	border-width: 2px;
+	border-color: rgb(100,110,0);
+	border-style: solid;
+	margin: 100px;
+}
 .tds{
 	background-color: #00FF00;	
 	margin: 10px;
