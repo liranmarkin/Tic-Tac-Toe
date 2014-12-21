@@ -11,10 +11,10 @@ app.controller('gameController',function() {
 				return 'pics/blank.png';
 				break;
 			case 1:
-				return 'pics/X.png';
+				return 'pics/X_pic.png';
 				break;
 			case 2:
-				return 'pics/O.png';
+				return 'pics/O_pic.png';
 				break;
 			default:
 				return 'pics/fail.png';
