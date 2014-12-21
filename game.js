@@ -11,7 +11,7 @@ app.controller('gameController',function() {
 				return 'pics/blank.png';
 				break;
 			case 1:
-				return 'pics/X.png';
+				return 'pics/x.png';
 				break;
 			case 2:
 				return 'pics/O.png';
