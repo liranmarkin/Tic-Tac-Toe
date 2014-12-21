@@ -26,5 +26,10 @@ app.controller('gameController',function() {
 	this.board[cell] = this.turn;
 	this.turn = 3-this.turn;
 	};
+
+	this.refresh = function(){
+		for(i = 0;i < 9;i++)
+			this.board[i] = 0;
+	};
 });
 
