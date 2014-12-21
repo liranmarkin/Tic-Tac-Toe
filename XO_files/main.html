@@ -1,0 +1,37 @@
+<html ng-app="game"> 
+	<head>
+		<link rel="stylesheet" type="text/css" href="mainStyleSheet.css"> 
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+		<script src="game.js"></script>
+		<title>
+			X O
+		</title>
+	</head>
+	<body>
+		<div class="table" ng-controller="gameController as game">
+		<table>
+			<tr>
+				<td class="tds" ng-click="game.move(0)"><div><img src="{{game.getPic(0)}}" class="pic"/></div></td>
+				<td class="tds" ng-click="game.move(1)"><div><img src="{{game.getPic(1)}}" class="pic"/></div></td>
+				<td class="tds" ng-click="game.move(2)"><div><img src="{{game.getPic(2)}}" class="pic"/></div></td>
+			</tr>
+			<tr>
+				<td class="tds" ng-click="game.move(3)"><div><img src="{{game.getPic(3)}}" class="pic"/></div></td>
+				<td class="tds" ng-click="game.move(4)"><div><img src="{{game.getPic(4)}}" class="pic"/></div></td>
+				<td class="tds" ng-click="game.move(5)"><div><img src="{{game.getPic(5)}}" class="pic"/></div></td>
+			</tr>
+			<tr>
+				<td class="tds" ng-click="game.move(6)"><div><img src="{{game.getPic(6)}}" class="pic"/></div></td>
+				<td class="tds" ng-click="game.move(7)"><div><img src="{{game.getPic(7)}}" class="pic"/></div></td>
+				<td class="tds" ng-click="game.move(8)"><div><img src="{{game.getPic(8)}}" class="pic"/></div></td>
+			</tr>
+			<tr><td>
+				<div class="refresh" ng-click="game.refresh()">
+					refresh
+				</div>
+				</td>
+			</tr>
+		</table>
+		</div>
+	</body>
+</html>
