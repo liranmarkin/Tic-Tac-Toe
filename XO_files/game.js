@@ -1,9 +1,14 @@
 var app = angular.module("game",[]);
-var board = [0,0,0,0,0,0,0,0,0];
-var turn = 1;
-function move(cell){
-	if(board[cell] != 0)
+
+app.controller('gameController',function() {
+    this.turn = 1;
+    this.board = [0,0,0,0,0,0,0,0,0];
+
+    this.move = function(cell){
+	if(this.board[cell] != 0)
 		return false;
-	board[cell] = turn;
-	turn = 3-turn;
-}
+	this.board[cell] = this.turn;
+	this.turn = 3-this.turn;
+	}
+});
+

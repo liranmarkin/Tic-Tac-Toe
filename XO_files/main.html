@@ -1,30 +1,31 @@
-<html>
+<html ng-app="game"> 
 	<head>
 		<link rel="stylesheet" type="text/css" href="mainStyleSheet.css"> 
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+		<script src="game.js"></script>
 		<title>
 			X O
 		</title>
 	</head>
 	<body>
-		<div class="table">
+		<div class="table" ng-controller="gameController as game">
 		<table>
 			<tr>
-				<td><div class="tds">hey</div></td>
-				<td><div class="tds">hey</div></td>
-				<td><div class="tds">hey</div></td>
+				<td><div class="tds" ng-click="game.move(0)">{{game.board[0]}}</div></td>
+				<td><div class="tds" ng-click="game.move(1)">{{game.board[1]}}</div></td>
+				<td><div class="tds" ng-click="game.move(2)">{{game.board[2]}}</div></td>
 			</tr>
 			<tr>
-				<td><div class="tds">hey</div></td>
-				<td><div class="tds">hey</div></td>
-				<td><div class="tds">hey</div></td>
+				<td><div class="tds" ng-click="game.move(3)">{{game.board[3]}}</div></td>
+				<td><div class="tds" ng-click="game.move(4)">{{game.board[4]}}</div></td>
+				<td><div class="tds" ng-click="game.move(5)">{{game.board[5]}}</div></td>
 			</tr>
 			<tr>
-				<td><div class="tds">hey</div></td>
-				<td><div class="tds">hey</div></td>
-				<td><div class="tds">hey</div></td>
+				<td><div class="tds" ng-click="game.move(6)">{{game.board[6]}}</div></td>
+				<td><div class="tds" ng-click="game.move(7)">{{game.board[7]}}</div></td>
+				<td><div class="tds" ng-click="game.move(8)">{{game.board[8]}}</div></td>
 			</tr>
 		</table>
 		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
 	</body>
 </html>
