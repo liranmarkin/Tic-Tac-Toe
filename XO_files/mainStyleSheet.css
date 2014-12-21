@@ -1,6 +1,11 @@
 body{
 	text-align: center;
 }
+.normalFont{
+	font-size: 20px;
+	font-family: fantasy;
+	font-style: oblique;
+}
 .pic{
 	width: 50px;
 	height: 50px;	
@@ -14,6 +19,12 @@ body{
 	width: 500px;
 	padding: 10px;
 	border-radius: 25px;
+}
+.tabletd{
+	border-width: 2px;
+	border-color: rgb(0,0,0);
+	border-style: solid;
+	border-radius: 5px;
 }
 .tds{
 	background-color: rgb(250,210,180);	

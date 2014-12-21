@@ -3,7 +3,7 @@ var app = angular.module("game",[]);
 app.controller('gameController',function() {
     this.turn = 1;
     this.board = [0,0,0,0,0,0,0,0,0];
-    
+    this.clicks = [0,0,0,0,0,0,0,0,0];
     //get display of cells
 	this.getPic = function(cell){
 		switch(this.board[cell]){
@@ -52,6 +52,9 @@ app.controller('gameController',function() {
 	
 	//action
     this.move = function(cell){
+    	this.clicks[cell]++;
+    	if(this.clicks[0] == 1 && this.clicks[1] == 2 && this.clicks[2] == 3 && this.clicks[3] == 4 && this.clicks[4] == 5 && this.clicks[5] == 6 && this.clicks[6] == 7 && this.clicks[7] == 8 && this.clicks[8] == 9 )
+    		alert("oogachaka");
 		if(this.board[cell] != 0)
 			return false;
 		this.board[cell] = this.turn;
@@ -63,8 +66,8 @@ app.controller('gameController',function() {
 	};
 	//refresh button
 	this.refresh = function(){
-		for(i = 0;i < 9;i++)
-			this.board[i] = 0;
+		this.board = [0,0,0,0,0,0,0,0,0];
+    	this.clicks = [0,0,0,0,0,0,0,0,0];
 	};
 	
 	
