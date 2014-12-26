@@ -1,7 +1,6 @@
 var app = angular.module("game",[]);
 
 app.controller('gameController',function() {
-    this.turn = 1;
     this.board = [0,0,0,0,0,0,0,0,0];
     this.clicks = [0,0,0,0,0,0,0,0,0];
     //get display of cells
@@ -57,12 +56,30 @@ app.controller('gameController',function() {
     		alert("oogachaka");
 		if(this.board[cell] != 0)
 			return false;
-		this.board[cell] = this.turn;
+		this.board[cell] = 1;
 		if(this.checkWinner()){
-			alert("Player "+this.turn+" Won");
+			alert("Player Won");
 			this.refresh();
 		}
-		this.turn = 3-this.turn;
+		else{
+			this.board[this.computerPlay()] = 2;
+			/*
+			var mov = this.computerPlay();
+			if(mov == -1){
+				for(var i = 0;i<this.board.length;i++)
+					if(this.board[i] == 0){
+						this.board[i] =2;
+						break;
+					}
+			}
+			else
+				this.board[mov] = 2;
+				*/
+			if(this.checkWinner()){
+				alert("Computer Won");
+				this.refresh();
+			}
+		}
 	};
 	//refresh button
 	this.refresh = function(){
@@ -70,6 +87,86 @@ app.controller('gameController',function() {
     	this.clicks = [0,0,0,0,0,0,0,0,0];
 	};
 	
+	this.boardFilled = function(){
+		var ans = 0;
+		for(var i = 0;i<this.board.length;i++){
+			if(board[i] != 0)
+				ans++;
+		}
+		return ans;
+	};
 	
+	this.factor = function(num){
+		return (num == 0)? 1 : factor(num-1)*num;
+	};
+	
+	this.stateAI = function(turn){
+		var points = 0,boardfilled = this.boardFilled();
+		if(this.checkWinner()) return this.factor(boardfilled-1);
+		for(var i = 0;i<this.board.length;i++){
+			if(this.board[i] == 0){
+				this.board[i] = turn;
+				var newPoints = this.stateAI(3-turn);
+				points += newPoints;
+				this.board[i] = 0;
+			}
+		}
+		return points;
+	};
+	
+	this.computerPlay = function(){
+		var bestI,maxPoints=0;
+		for(var i = 0;i<this.board.length;i++){
+			if(this.board[i] == 0){
+				this.board[i] = 2;
+				var points = this.stateAI(1);
+				if(points > maxPoints){
+						maxPoints = points;
+						bestI = i;
+				}
+				this.board[i] = 0;
+			}
+		}
+		return bestI;
+	};
+	
+	/*
+	//computer play the best choice
+	this.computerPlay=function(){
+		if(this.checkWinner())
+			return -1;
+		var lastI = 0;
+		for(var i = 0;i<this.board.length;i++){
+			if(this.board[i] == 0){
+				lastI = i;
+				this.board[i] = 2;
+				if(!this.playerPlay()){
+					this.board[i] = 0;
+					return i;
+				}
+				this.board[i] = 0;
+			}
+		}
+		return -1;
+	};
+	//AI for what the player would do
+	this.playerPlay=function(){
+		if(this.checkWinner())
+			return false;
+		var lastI = 0;
+		for(var i = 0;i<this.board.length;i++){
+			if(this.board[i] == 0){
+				lastI = i;
+				this.board[i] = 1;
+				if(this.computerPlay() == -1){
+					this.board[i] = 0;
+					return true;
+				}
+				this.board[i] = 0;
+			}
+		}
+		return false;
+	};
+	*/
 });
 
